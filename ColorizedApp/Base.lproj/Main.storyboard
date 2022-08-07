@@ -116,13 +116,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueColorLabel" destination="Ks7-s4-4rz" id="SLW-Qq-M5c"/>
                         <outlet property="blueColorSlider" destination="fGg-Nd-km2" id="wtr-yY-ME3"/>
                         <outlet property="blueColorValue" destination="uFX-53-4Q6" id="hR4-VI-5CG"/>
-                        <outlet property="greenColorLabel" destination="5sb-ja-b11" id="U7C-Mt-Fmp"/>
                         <outlet property="greenColorSlider" destination="ra0-2X-LlB" id="Xf9-yp-2e2"/>
                         <outlet property="greenColorValue" destination="Pnj-O7-e1S" id="Ll2-TK-ZFE"/>
-                        <outlet property="redColorLabel" destination="Oe9-XZ-ycl" id="XLA-bY-7OR"/>
                         <outlet property="redColorSlider" destination="l2a-hq-VQV" id="gve-Bb-cMd"/>
                         <outlet property="redColorValue" destination="lXK-ZY-lsu" id="15s-LL-UX6"/>
                         <outlet property="rgbView" destination="G7j-hQ-WzL" id="cDc-nm-P0e"/>

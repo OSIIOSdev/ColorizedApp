@@ -10,10 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var rgbView: UIView!
     
-    @IBOutlet var redColorLabel: UILabel!
-    @IBOutlet var greenColorLabel: UILabel!
-    @IBOutlet var blueColorLabel: UILabel!
-    
     @IBOutlet var redColorValue: UILabel!
     @IBOutlet var greenColorValue: UILabel!
     @IBOutlet var blueColorValue: UILabel!
@@ -28,21 +24,13 @@ class ViewController: UIViewController {
         
         rgbView.layer.cornerRadius = 10
         
-        redColorLabel.font = redColorLabel.font.withSize(10)
-        greenColorLabel.font = greenColorLabel.font.withSize(10)
-        blueColorLabel.font = blueColorLabel.font.withSize(10)
+        redColorLabelsSettings()
+        greenColorLabelsSettings()
+        blueColorLabelsSettings()
         
-        redColorValue.font = redColorValue.font.withSize(10)
-        greenColorValue.font = greenColorValue.font.withSize(10)
-        blueColorValue.font = blueColorValue.font.withSize(10)
-        
-        redColorValue.text = "0"
-        greenColorValue.text = "0"
-        blueColorValue.text = "0"
-        
-        redColorSlider.minimumTrackTintColor = .red
-        greenColorSlider.minimumTrackTintColor = .green
-        blueColorSlider.minimumTrackTintColor = .blue
+        redColorSliderSettings()
+        greenColorSliderSettings()
+        blueColorSliderSettings()
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,7 +52,45 @@ class ViewController: UIViewController {
         blueColorValue.text = String(format: "%.0f", blueColorSlider.value)
     }
     
+    //MARK: - Private methods
+    private func redColorLabelsSettings() {
+        redColorValue.font = redColorValue.font.withSize(10)
+        redColorValue.text = "0"
+    }
     
+    private func greenColorLabelsSettings() {
+        greenColorValue.font = greenColorValue.font.withSize(10)
+        greenColorValue.text = "0"
+    }
+    
+    private func blueColorLabelsSettings() {
+        blueColorValue.font = blueColorValue.font.withSize(10)
+        blueColorValue.text = "0"
+    }
+    
+    private func redColorSliderSettings() {
+        redColorSlider.minimumTrackTintColor = .red
+        
+        redColorSlider.minimumValue = 0
+        redColorSlider.maximumValue = 100
+        redColorSlider.value = 0
+    }
+    
+    private func greenColorSliderSettings() {
+        greenColorSlider.minimumTrackTintColor = .green
+        
+        greenColorSlider.minimumValue = 0
+        greenColorSlider.maximumValue = 100
+        greenColorSlider.value = 0
+    }
+    
+    private func blueColorSliderSettings() {
+        blueColorSlider.minimumTrackTintColor = .blue
+        
+        blueColorSlider.minimumValue = 0
+        blueColorSlider.maximumValue = 100
+        blueColorSlider.value = 0
+    }
     
 }
 
