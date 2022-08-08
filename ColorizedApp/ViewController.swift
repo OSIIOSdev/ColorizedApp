@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ColorizedApp
-//
-//  Created by Илья on 07.08.2022.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -24,13 +17,13 @@ class ViewController: UIViewController {
         
         rgbView.layer.cornerRadius = 10
         
-        redColorLabelsSettings()
-        greenColorLabelsSettings()
-        blueColorLabelsSettings()
+        colorLabelSettings(redColorValue)
+        colorLabelSettings(greenColorValue)
+        colorLabelSettings(blueColorValue)
         
-        redColorSliderSettings()
-        greenColorSliderSettings()
-        blueColorSliderSettings()
+        colorSliderSettings(redColorSlider, color: .red)
+        colorSliderSettings(greenColorSlider, color: .green)
+        colorSliderSettings(blueColorSlider, color: .blue)
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,44 +46,17 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Private methods
-    private func redColorLabelsSettings() {
-        redColorValue.font = redColorValue.font.withSize(10)
-        redColorValue.text = "0"
-    }
-    
-    private func greenColorLabelsSettings() {
-        greenColorValue.font = greenColorValue.font.withSize(10)
-        greenColorValue.text = "0"
-    }
-    
-    private func blueColorLabelsSettings() {
-        blueColorValue.font = blueColorValue.font.withSize(10)
-        blueColorValue.text = "0"
-    }
-    
-    private func redColorSliderSettings() {
-        redColorSlider.minimumTrackTintColor = .red
+    private func colorSliderSettings(_ slider: UISlider, color: UIColor) {
+        slider.minimumTrackTintColor = color
         
-        redColorSlider.minimumValue = 0
-        redColorSlider.maximumValue = 100
-        redColorSlider.value = 0
+        slider.minimumValue = 0
+        slider.maximumValue = 100
+        slider.value = 0
     }
     
-    private func greenColorSliderSettings() {
-        greenColorSlider.minimumTrackTintColor = .green
-        
-        greenColorSlider.minimumValue = 0
-        greenColorSlider.maximumValue = 100
-        greenColorSlider.value = 0
+    private func colorLabelSettings(_ value: UILabel) {
+        value.font = value.font.withSize(10)
+        value.text = "0"
     }
-    
-    private func blueColorSliderSettings() {
-        blueColorSlider.minimumTrackTintColor = .blue
-        
-        blueColorSlider.minimumValue = 0
-        blueColorSlider.maximumValue = 100
-        blueColorSlider.value = 0
-    }
-    
 }
 
