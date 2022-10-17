@@ -1,6 +1,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: - IBOutlets
     @IBOutlet var rgbView: UIView!
     
     @IBOutlet var redColorValue: UILabel!
@@ -11,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var greenColorSlider: UISlider!
     @IBOutlet var blueColorSlider: UISlider!
     
-    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +33,8 @@ class ViewController: UIViewController {
                                           blue: CGFloat(blueColorSlider.value / 100),
                                           alpha: 1)
     }
-
+    
+    //MARK: - IBActions
     @IBAction func redColorSliderAction() {
         redColorValue.text = String(format: "%.0f", redColorSlider.value)
     }
